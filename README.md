@@ -1,4 +1,4 @@
-# libation
+# libNation
 
 **  UNDER CONSTRUCTION
 
@@ -11,7 +11,7 @@
     * https://awesomeproject.github.io/Project1/
     * https://github.com/stanman/project1 -->
 ### CONTRIBUTORS
-  * 01: Libation
+  * 01: LibNation
     * Frank McDermott | Slack name: Frank McDermott | Github : [fmcdermott4](https://github.com/fmcdermott4)
     * Annakate Pitts | Slack name: Annakate Pitts | Github : [pittsannakate](https://github.com/pittsannakate)
     * Mario Cabrera | Slack name: Mario Cabrera | Github : [MarioCab](https://github.com/MarioCab)
