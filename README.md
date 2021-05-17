@@ -18,4 +18,4 @@
     * Tom Kerekes | Slack name: Tom Kerekes | Github : [tkerekes10](https://github.com/tkerekes10)
     * Matthew Scott Pawlak | Slack name: Matthew Pawlak | Github : [pharaohnof](https://github.com/pharaohnof)
     * Project Github Page: [GITHUB PAGE HERE]
-    * Project Github Repo: https://github.com/pharaohnof/libation
+    * Project Github Repo: https://github.com/pharaohnof/MEMEnto
