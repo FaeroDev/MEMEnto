@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Phrase extends Model {}
+class Picture extends Model {}
 
 User.init(
 {
@@ -20,8 +20,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Url',
+    modelName: 'picture',
     }
 );
 
-module.exports = Url;
+module.exports = Picture;
