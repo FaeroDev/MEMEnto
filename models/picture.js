@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Login extends Model {}
+class Phrase extends Model {}
 
 User.init(
 {
@@ -11,10 +11,7 @@ User.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    username: {
-        type: DataTypes.STRING,
-    },
-    password: {
+    url: {
         type: DataTypes.STRING,
     },
     },
@@ -23,8 +20,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'login',
+    modelName: 'Url',
     }
 );
 
-module.exports = Login;
+module.exports = Url;
