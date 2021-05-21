@@ -1,30 +1,37 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Phrase extends Model {}
+class Phrase extends Model {};
 
-User.init(
-{
+Phrase.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    phrase: {
-        type: DataTypes.STRING,
+    upper_text: {
+      type: DataTypes.STRING,
+    },
+    lower_text: {
+      type: DataTypes.STRING,
     },
     picture_id: {
-        type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
+      refrences: {
+        model: 'picture',
+        key: 'id',
+      }
     },
-    },
-    {
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'phrase',
-    }
+    modelName: "phrase",
+  }
 );
 
 module.exports = Phrase;
