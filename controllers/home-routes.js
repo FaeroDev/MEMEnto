@@ -1,21 +1,21 @@
 const router = require("express").Router();
-const { Memes, Template } = require("../models");
+const { Picture, Phrase } = require("../models");
 
 // GET all galleries for homepage
 router.get("/", async (req, res) => {
   try {
-    const dbMemesData = await Memes.findAll({
+    const dbPictureData = await Picture.findAll({
       include: [
         {
           model: Template,
-          attributes: ["filename", "description"],
+          attributes: ["id", "url"],
         },
       ],
     });
 
-    const memes = dbMemesData.map((meme) => meme.get({ plain: true }));
+    const pictures = dbPictureData.map((meme) => meme.get({ plain: true }));
     res.render("homepage", {
-      memes,
+      pictures,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -25,9 +25,9 @@ router.get("/", async (req, res) => {
 });
 
 // GET one gallery
-router.get("/meme/:id", async (req, res) => {
+router.get("/picture/:id", async (req, res) => {
   try {
-    const dbMemesData = await Memes.findByPk(req.params.id, {
+    const dbPictureData = await Picture.findByPk(req.params.id, {
       include: [
         {
           model: Template,
@@ -43,7 +43,7 @@ router.get("/meme/:id", async (req, res) => {
       ],
     });
 
-    const meme = dbMemesData.get({ plain: true });
+    const meme = dbPictureData.get({ plain: true });
     res.render("meme", { meme, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -51,18 +51,18 @@ router.get("/meme/:id", async (req, res) => {
   }
 });
 
-// GET one painting
-router.get("/template/:id", async (req, res) => {
-  try {
-    const dbTemplateData = await Template.findByPk(req.params.id);
+// // GET one painting
+// router.get("/template/:id", async (req, res) => {
+//   try {
+//     const dbTemplateData = await Template.findByPk(req.params.id);
 
-    const meme = dbTemplateData.get({ plain: true });
-    res.render("template", { meme, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     const meme = dbTemplateData.get({ plain: true });
+//     res.render("template", { meme, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // Login route
 router.get("/login", (req, res) => {
