@@ -1,11 +1,6 @@
 const router = require("express").Router();
 const { Picture, Phrase } = require("../models");
 
-let phrase1;
-let picture1;
-let dbPictureData;
-let dbPhraseData;
-
 // GET all galleries for homepage
 router.get("/", async (req, res) => {
   try {
@@ -32,7 +27,7 @@ router.get("/", async (req, res) => {
 // GET one gallery
 router.get("/picture/:id", async (req, res) => {
   try {
-    dbPictureData = await Picture.findByPk(req.params.id, {
+    const dbPictureData = await Picture.findByPk(req.params.id, {
       include: [
         {
           model: Picture,
@@ -41,22 +36,22 @@ router.get("/picture/:id", async (req, res) => {
       ],
     });
 
-    dbPhraseData = await Phrase.findAll({
+    const dbPhraseData = await Phrase.findAll({
       where: {
         picture_id: req.params.id,
       },
       include: [
         {
           model: Phrase,
-          attributes: ["id", "upper_text", "lower_text", "picture_id"],
+          attributes: ["id", "upper_text", "lower_text", "phrase_picture_id"],
         },
       ],
     });
 
-    picture1 = dbPictureData.get({ plain: true });
+    const picture = dbPictureData.get({ plain: true });
     //res.render ---> Make sure that the handlebar page looks the same replace 'meme'
 
-    phrase1 = dbPhraseData.get({ plain: true });
+    const phrase = dbPhraseData.get({ plain: true });
     res.render("picture", { picture, phrase, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
