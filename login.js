@@ -6,10 +6,10 @@ const loginForm = async (event) => {
     const password = // Route to where the password will be inputed and saved into local storage;
 
     if (email && password) {
-        const response = await fetch (//'wherever the route for the login is',{
+        const response = await fetch ("/api/user-routes/login", {
             method: 'POST',
             body: JSON.stringify({email, password}),
-            headers: {'Content-Type': 'application/json'},.
+            headers: {'Content-Type': 'application/json'},
         });
         
         if (response.ok){
@@ -28,7 +28,7 @@ const signupForm = async (event) => {
     const password = // Route to where the password will be inputed and saved into local storage;
   
     if (username && email && password) {
-      const response = await fetch(// wherever route for user is {
+      const response = await fetch('/api/user-routes', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -37,7 +37,7 @@ const signupForm = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert('Failed to sign up.');
+        alert('Sign up failed.');
       }
     }
   };
