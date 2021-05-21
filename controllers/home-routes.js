@@ -1,13 +1,18 @@
 const router = require("express").Router();
 const { Picture, Phrase } = require("../models");
 
+let phrase1;
+let picture1;
+let dbPictureData;
+let dbPhraseData;
+
 // GET all galleries for homepage
 router.get("/", async (req, res) => {
   try {
     const dbPictureData = await Picture.findAll({
       include: [
         {
-          model: Template,
+          model: Picture,
           attributes: ["id", "url"],
         },
       ],
@@ -27,24 +32,32 @@ router.get("/", async (req, res) => {
 // GET one gallery
 router.get("/picture/:id", async (req, res) => {
   try {
-    const dbPictureData = await Picture.findByPk(req.params.id, {
+    dbPictureData = await Picture.findByPk(req.params.id, {
       include: [
         {
-          model: Template,
-          attributes: [
-            "id",
-            "title",
-            "artist",
-            "exhibition_date",
-            "filename",
-            "description",
-          ],
+          model: Picture,
+          attributes: ["id", "url", "descritpion"],
         },
       ],
     });
 
-    const meme = dbPictureData.get({ plain: true });
-    res.render("meme", { meme, loggedIn: req.session.loggedIn });
+    dbPhraseData = await Phrase.findAll({
+      where: {
+        picture_id: req.params.id,
+      },
+      include: [
+        {
+          model: Phrase,
+          attributes: ["id", "upper_text", "lower_text", "picture_id"],
+        },
+      ],
+    });
+
+    picture1 = dbPictureData.get({ plain: true });
+    //res.render ---> Make sure that the handlebar page looks the same replace 'meme'
+
+    phrase1 = dbPhraseData.get({ plain: true });
+    res.render("picture", { picture, phrase, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
