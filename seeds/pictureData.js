@@ -2,7 +2,7 @@ const { Picture } = require('../models');
 
 const pictureData = [
     { 
-        
+        url : "test url"
     }
 ];
 

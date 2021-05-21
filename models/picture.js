@@ -1,18 +1,18 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Picture extends Model {}
+class Picture extends Model {};
 
-User.init(
+Picture.init(
 {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
     },
     url: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
     },
     },
     {
@@ -20,7 +20,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'picture',
+    modelName: 'picture'
     }
 );
 
