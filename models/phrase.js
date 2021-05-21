@@ -18,7 +18,11 @@ Phrase.init(
       type: DataTypes.STRING,
     },
     picture_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
+      refrences: {
+        model: 'picture',
+        key: 'id',
+      }
     },
   },
   {
