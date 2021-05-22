@@ -5,18 +5,18 @@ const { Picture, Phrase } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const dbPictureData = await Picture.findAll({
-      include: [
-        {
-          model: picture,
-          attributes: ["id", "url"],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Picture,
+      //     attributes: ["id", "url"],
+      //   },
+      // ],
     });
 
     const pictures = dbPictureData.map((meme) => meme.get({ plain: true }));
     res.render("homepage", {
       pictures,
-      loggedIn: req.session.loggedIn,
+      // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -24,40 +24,40 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET one gallery
-router.get("/picture/:id", async (req, res) => {
-  try {
-    const dbPictureData = await Picture.findByPk(req.params.id, {
-      include: [
-        {
-          model: picture,
-          attributes: ["id", "url", "descritpion"],
-        },
-      ],
-    });
+// // GET one gallery
+// router.get("/picture/:id", async (req, res) => {
+//   try {
+//     const dbPictureData = await Picture.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: picture,
+//           attributes: ["id", "url", "descritpion"],
+//         },
+//       ],
+//     });
 
-    const dbPhraseData = await Phrase.findAll({
-      where: {
-        picture_id: req.params.id,
-      },
-      include: [
-        {
-          model: phrase,
-          attributes: ["id", "upper_text", "lower_text", "phrase_picture_id"],
-        },
-      ],
-    });
+//     const dbPhraseData = await Phrase.findAll({
+//       where: {
+//         picture_id: req.params.id,
+//       },
+//       include: [
+//         {
+//           model: phrase,
+//           attributes: ["id", "upper_text", "lower_text", "phrase_picture_id"],
+//         },
+//       ],
+//     });
 
-    const picture = dbPictureData.get({ plain: true });
-    //res.render ---> Make sure that the handlebar page looks the same replace 'meme'
+//     const picture = dbPictureData.get({ plain: true });
+//     //res.render ---> Make sure that the handlebar page looks the same replace 'meme'
 
-    const phrase = dbPhraseData.get({ plain: true });
-    res.render("picture", { picture, phrase, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     const phrase = dbPhraseData.get({ plain: true });
+//     res.render("picture", { picture, phrase, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // // GET one painting
 // router.get("/template/:id", async (req, res) => {
@@ -72,13 +72,13 @@ router.get("/picture/:id", async (req, res) => {
 //   }
 // });
 
-// Login route
-router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-  res.render("login");
-});
+// // Login route
+// router.get("/login", (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect("/");
+//     return;
+//   }
+//   res.render("login");
+// });
 
 module.exports = router;
