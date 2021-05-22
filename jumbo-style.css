@@ -1,3 +1,7 @@
+/* *{
+  border-top: 2px solid red
+} */
+
 .jumbotron { /*MIMICS DEPRECATED JUMBOTRON FROM PREVIOUS BS VERSIONS TO BS-5 AND UP*/
     padding: 4rem 2rem;
     /* margin-bottom: 2rem; */
@@ -13,3 +17,17 @@
     text-align: center;
     font-weight: bold;
   }
+
+  .text-box-container{
+    text-align: center;
+  }
+
+  .transparent{
+    opacity: 20%;
+  }
+
+.memeSubmission {
+  width: 100%;
+  padding: 5px;
+  color: var(--light);
+}

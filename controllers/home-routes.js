@@ -31,7 +31,7 @@ router.get("/picture/:id", async (req, res) => {
       include: [
         {
           model: picture,
-          attributes: ["id", "url", "description"],
+          attributes: ["id", "url", "descritpion"],
         },
       ],
     });
@@ -42,7 +42,7 @@ router.get("/picture/:id", async (req, res) => {
       },
       include: [
         {
-          model: Phrase,
+          model: phrase,
           attributes: ["id", "upper_text", "lower_text", "phrase_picture_id"],
         },
       ],
