@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     const dbPictureData = await Picture.findAll({
       include: [
         {
-          model: Picture,
+          model: picture,
           attributes: ["id", "url"],
         },
       ],
@@ -30,7 +30,7 @@ router.get("/picture/:id", async (req, res) => {
     const dbPictureData = await Picture.findByPk(req.params.id, {
       include: [
         {
-          model: Picture,
+          model: picture,
           attributes: ["id", "url", "descritpion"],
         },
       ],
@@ -42,7 +42,7 @@ router.get("/picture/:id", async (req, res) => {
       },
       include: [
         {
-          model: Phrase,
+          model: phrase,
           attributes: ["id", "upper_text", "lower_text", "phrase_picture_id"],
         },
       ],
