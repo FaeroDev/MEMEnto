@@ -1,4 +1,4 @@
-const Login = require("./user");
+const User = require("./user");
 const Picture = require("./picture");
 const Phrase = require("./phrase");
 
