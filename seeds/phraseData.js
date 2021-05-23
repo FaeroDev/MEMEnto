@@ -28,6 +28,11 @@ const phraseData = [
     { 
         upper_text :"Unsettled Tom",
         picture_id : 7
+    },
+    {
+        upper_text :"UPPER TEST",
+        lower_text :"LOWER TEST",
+        picture_id : 1
     }
 ];
 

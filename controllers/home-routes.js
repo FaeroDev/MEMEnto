@@ -7,13 +7,15 @@ router.get("/", async (req, res) => {
     const dbPictureData = await Picture.findAll({
       // include: [
       //   {
-      //     model: Picture,
-      //     attributes: ["id", "url"],
+      //     model: Phrase,
+      //     attributes: ["id", "upper_text", "lower_text", "picture_id"],
       //   },
       // ],
     });
 
-    const pictures = dbPictureData.map((meme) => meme.get({ plain: true }));
+    const pictures = dbPictureData.map((picture) =>
+      picture.get({ plain: true })
+    );
     res.render("homepage", {
       pictures,
       // loggedIn: req.session.loggedIn,
@@ -24,17 +26,38 @@ router.get("/", async (req, res) => {
   }
 });
 
-// // GET one gallery
-// router.get("/picture/:id", async (req, res) => {
-//   try {
-//     const dbPictureData = await Picture.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: picture,
-//           attributes: ["id", "url", "descritpion"],
-//         },
-//       ],
-//     });
+// GET one picture
+router.get("/picture/:id", async (req, res) => {
+  try {
+    const dbPictureData = await Picture.findByPk(req.params.id, {
+      include: [
+        {
+          model: Phrase,
+          attributes: ["id", "upper_text", "lower_text", "picture_id"],
+        },
+      ],
+    });
+
+    const picture = dbPictureData.get({ plain: true });
+    res.render("picture", { picture });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/phrase/:id', async (req, res) => {
+  try{
+    const dbPhraseData = await phrase.findbyFK(req.params.id);
+
+    const phrase = dbPhraseData.get({plain: true});
+    res.render("phrase", { phrase });
+  }catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+//res.render ---> Make sure that the handlebar page looks the same replace 'meme'
 
 //     const dbPhraseData = await Phrase.findAll({
 //       where: {
@@ -47,9 +70,6 @@ router.get("/", async (req, res) => {
 //         },
 //       ],
 //     });
-
-//     const picture = dbPictureData.get({ plain: true });
-//     //res.render ---> Make sure that the handlebar page looks the same replace 'meme'
 
 //     const phrase = dbPhraseData.get({ plain: true });
 //     res.render("picture", { picture, phrase, loggedIn: req.session.loggedIn });

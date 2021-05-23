@@ -19,7 +19,7 @@ Phrase.init(
     },
     picture_id: {
       type: DataTypes.INTEGER,
-      refrences: {
+      references: {
         model: 'picture',
         key: 'id',
       }
