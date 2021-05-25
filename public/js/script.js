@@ -7,11 +7,11 @@ const formSubmitHandler = async (event) => {
   const upperTextInput = document.getElementById("upperTextInput");
   const lowerTextInput = document.getElementById("lowerTextInput");
 
-  const upperText = upperTextInput.value.trim();
-  const lowerText = lowerTextInput.value.trim();
+  let upperText = upperTextInput.value.trim();
+  let lowerText = lowerTextInput.value.trim();
 
-  upperText = upperTextEl.textContent;
-  lowerText = lowerTextEl.textContent;
+  upperTextEl.innerHTML = upperText;
+  lowerTextEl.innerHTML = lowerText;
 
   console.log(upperTextEl);
   console.log(lowerText);
