@@ -1,6 +1,6 @@
-{{picture.id}}
+{{!-- {{picture.id}}
 
-{{phrase.upper_text}}
+{{phrase.upper_text}} --}}
 
 
 {{!-- {{picture.[1].phrase.upper_text}} --}}
@@ -12,13 +12,14 @@ picture
           <img class="h-vh-100 w-100" src="{{picture.url}}" />
         </div>
         <div class="position-absolute top-0 start-50 translate-middle-x">
-          <h1 id="upperText" class="text-uppercase text-white">{{#each picture.phrases as |phrase|}}
-{{phrase.upper_text}}
+          <h1 id="upperText" class="text-uppercase text-white">
+            {{#each  picture.phrases as |phrase|}}
+{{this.upper_text}}
 
 </h1>
         </div>
         <div class="position-absolute bottom-0 start-50 translate-middle-x">
-          <h1 id="lowerText" class="text-uppercase text-white">{{phrase.lower_text}}</h1>
+          <h1 id="lowerText" class="text-uppercase text-white">{{this.lower_text}}</h1>
         </div>
       </div>
 
@@ -41,6 +42,26 @@ picture
         </div>
       </div>
 
+          <div>
+      {{!-- <button id="phrase-button-{{phrase.id}}" type="button" class="btn btn-secondary phrase-button">{{this.picture_id}}{{phrase.upper_text}} {{phrase.lower_text}} {{phrase.id}}</button> --}}
+
+
       
     </main>
 {{/each}}
+
+    </div>
+        <div
+          id="history-button-group"
+          class="btn-group-vertical col-12 mt-4 mb-2"
+          role="group"
+        >
+          <!-- HISTORY BUTTONS INJECTED HERE -->
+        </div>
+
+<script src="/js/login.js"></script>
+
+
+    
+
+
