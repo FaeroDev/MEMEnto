@@ -46,13 +46,13 @@ router.get("/picture/:id", async (req, res) => {
   }
 });
 
-router.get('/phrase/:id', async (req, res) => {
-  try{
+router.get("/phrase/:id", async (req, res) => {
+  try {
     const dbPhraseData = await phrase.findbyFK(req.params.id);
 
-    const phrase = dbPhraseData.get({plain: true});
+    const phrase = dbPhraseData.get({ plain: true });
     res.render("phrase", { phrase });
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
@@ -94,10 +94,10 @@ router.get('/phrase/:id', async (req, res) => {
 
 // Login route
 router.get("/login", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect("/");
-  //   return;
-  // }
+  //   if (req.session.loggedIn) {
+  //     res.redirect("/");
+  //     return;
+  //   }
   res.render("login");
 });
 
