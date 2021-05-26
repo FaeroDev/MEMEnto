@@ -1,79 +1,54 @@
-{{!-- {{picture.id}}
+<main class="row">
+  <div id="memeContainer" class="container position-relative m-1 h-auto p-0 col-12 col-sm-6">
+    <div class="container m-0 h-100 w-auto">
+      <img class="h-vh-100 w-100" src="{{picture.url}}" />
+    </div>
+    <div class="position-absolute top-0 start-50 translate-middle-x">
+      <h1 id="upperText" class="text-uppercase text-white">
 
-{{phrase.upper_text}} --}}
+      </h1>
+    </div>
+    <div class="position-absolute bottom-0 start-50 translate-middle-x">
+      <h1 id="lowerText" class="text-uppercase text-white">
+      </h1>
+    </div>
+  </div>
 
-
-{{!-- {{picture.[1].phrase.upper_text}} --}}
-picture
-
-    <main class="row">
-      <div id="memeContainer" class="container position-relative m-1 h-auto p-0 col-12 col-sm-6">
-        <div class="container m-0 h-100 w-auto">
-          <img class="h-vh-100 w-100" src="{{picture.url}}" />
+  <div id="phraseInputContainer" class="container position-relative m-1 h-auto p-0 col-12 col-sm-5">
+    <div class="memeSubmission">
+      <h2 class="submission-title text-center">Some Words</h2>
+      <form class="form" id="meme-form">
+        <div class="form-group">
+          <label for="upperTextInput">
+            <h5>Upper Text:</h5>
+          </label>
+          <input class="form-input w-100" type="text" id="upperTextInput" />
         </div>
-        <div class="position-absolute top-0 start-50 translate-middle-x">
-          <h1 id="upperText" class="text-uppercase text-white">
-            {{!-- {{#each  picture.phrases as |phrase|}}
-{{this.upper_text}} --}}
-
-</h1>
+        <div class="form-group">
+          <label for="lowerTextInput">
+            <h5>Lower Text:</h5>
+          </label>
+          <input class="form-input w-100" type="text" id="lowerTextInput" />
         </div>
-        <div class="position-absolute bottom-0 start-50 translate-middle-x">
-          <h1 id="lowerText" class="text-uppercase text-white">
-            {{!-- {{this.lower_text}} --}}
-            </h1>
+        <div class="form-group p-2 text-center">
+          <button id="submit-button" class="btn btn-primary" type="submit">Submit</button>
         </div>
-      </div>
+      </form>
+    </div>
+  </div>
 
-      <div id="phraseInputContainer" class="container position-relative m-1 h-auto p-0 col-12 col-sm-5">
-        <div class="memeSubmission">
-          <h2 class="submission-title text-center">Some Words</h2>
-          <form class="form" id="meme-form">
-            <div class="form-group">
-              <label for="upperTextInput"><h5>Upper Text:</h5></label>
-              <input class="form-input w-100" type="text" id="upperTextInput" />
-            </div>
-            <div class="form-group">
-              <label for="lowerTextInput"><h5>Lower Text:</h5></label>
-              <input class="form-input w-100" type="text" id="lowerTextInput" />
-            </div>
-            <div class="form-group p-2 text-center">
-              <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-          <div>
-      {{!-- <button id="phrase-button-{{phrase.id}}" type="button" class="btn btn-secondary phrase-button">{{this.picture_id}}{{phrase.upper_text}} {{phrase.lower_text}} {{phrase.id}}</button> --}}
-
-
-      
-    </main>
+  <div>
+</main>
 
 <div class="container-fluid text-center">
-{{!-- {{/each}} --}}
-<div id="history-button-group" class="btn-group-vertical m-2 col-6" role="group">
-            {{#each  picture.phrases as |phrase|}}
-        {{>phrase-button}}
-  {{/each}}
+  <div id="history-button-group" class="btn-group-vertical m-2 col-6" role="group">
+    {{#each picture.phrases as |phrase|}}
+    {{>phrase-button}}
+    {{/each}}
   </div>
 </div>
 
 
-    {{!-- </div>
-        <div
-          id="history-button-group"
-          class="btn-group-vertical col-12 mt-4 mb-2"
-          role="group"
-        >
-          <!-- HISTORY BUTTONS INJECTED HERE -->
-        </div> --}}
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="/js/script.js"></script>
-<script src="/js/login.js"></script>
-
-
-    
-
-
+<script src="/js/button.js"></script>

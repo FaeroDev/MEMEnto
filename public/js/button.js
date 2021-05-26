@@ -1,16 +1,13 @@
-const histBtnGrp = document.getElementById("history-button-group");
+const phraseBtn = $(".phrase-button");
+let upperTextInput = document.getElementById("upperTextInput");
+let lowerTextInput = document.getElementById("lowerTextInput");
+const subBtn = $("#submit-button");
 
-for (const phrase of {phrase}) {
-    makeHistoryBtn()
-}
+$(phraseBtn).on("click", function fillField() {
+  console.log("fillField fired" + this.dataset.uppertext);
 
-// histArr.forEach(makeHistoryBtn);
-function makeHistoryBtn(item, index) {
+  upperTextInput.value = this.dataset.uppertext;
+  lowerTextInput.value = this.dataset.lowertext;
 
-  console.log("makeHistoryBtn fired");
-  const historyBtn = document.createElement("button");
-  historyBtn.setAttribute("id", `button-{phrase.id}`);
-  historyBtn.setAttribute("type", "button");
-  historyBtn.setAttribute("class", "btn border histBtn");
-//   historyBtn.innerHTML = searchCap + ", " + item.map;
-  histBtnGrp.appendChild(historyBtn);}
+  subBtn.click();
+});
