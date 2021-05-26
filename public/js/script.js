@@ -1,3 +1,7 @@
+let inputContainer = document.getElementById("phraseInputContainer");
+let picId = parseInt(inputContainer.dataset.picid, 10)
+
+
 const formSubmitHandler = async (event) => {
   event.preventDefault();
 
@@ -9,14 +13,14 @@ const formSubmitHandler = async (event) => {
 
   let upperText = upperTextInput.value.trim();
   let lowerText = lowerTextInput.value.trim();
-
+let pictureId = picId
   upperTextEl.innerHTML = upperText;
   lowerTextEl.innerHTML = lowerText;
 
   if (upperText && lowerText) {
     const userInput = await fetch("/api/picture/", {
       method: "POST",
-      body: JSON.stringify({ upperText, lowerText }),
+      body: JSON.stringify({ upperText, lowerText, pictureId }),
       headers: { "Content-Type": "application/json" },
     });
 
