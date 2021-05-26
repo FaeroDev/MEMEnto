@@ -1,7 +1,8 @@
-<main class="row w-100 m-0">
-  <div id="memeContainer" class="container position-relative m-1 h-auto p-0 col-12 col-xl-6">
-    <div class="container  h-auto w-auto">
-      <img class="my-w" src="{{picture.url}}" />
+<link rel="stylesheet" href="/js/external/jquery/jquery-ui.min.css">
+<main class="row">
+  <div id="memeContainer" class="container position-relative m-1 h-auto p-0 col-12 col-sm-6">
+    <div class="container m-0 h-100 w-auto">
+      <img class="h-vh-100 w-100" src="{{picture.url}}" />
     </div>
     <div class="position-absolute top-0 start-50 translate-middle-x">
       <h1 id="upperText" class="text-uppercase text-white">
@@ -14,7 +15,7 @@
     </div>
   </div>
 
-  <div id="phraseInputContainer" data-picid="{{picture.id}}" class="container position-relative m-1 h-auto  p-2 col-12 col-xl-5">
+  <div id="phraseInputContainer" class="container position-relative m-1 h-auto p-0 col-12 col-sm-5">
     <div class="memeSubmission">
       <h2 class="submission-title text-center">Some Words</h2>
       <form class="form" id="meme-form">
@@ -30,14 +31,9 @@
           </label>
           <input class="form-input w-100" type="text" id="lowerTextInput" />
         </div>
-                        <div class="form-group p-2 text-center">
-          <button id="view-button" class="btn btn-primary" type="submit">View</button>
-        </div>
-
         <div class="form-group p-2 text-center">
           <button id="submit-button" class="btn btn-primary" type="submit">Submit</button>
         </div>
-
       </form>
     </div>
   </div>
@@ -45,16 +41,17 @@
   <div>
 </main>
 
-<div class="container-fluid text-center ">
+<div class="container-fluid text-center">
   <div id="history-button-group" class="btn-group-vertical m-2 col-6" role="group">
     {{#each picture.phrases as |phrase|}}
     {{>phrase-button}}
     {{/each}}
   </div>
-  {{!-- {{picture.id}} --}}
 </div>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/js/external/jquery/jquery.js"></script>
+<script src="/js/external/jquery/jquery-ui.min.js"></script>
 <script src="/js/script.js"></script>
 <script src="/js/button.js"></script>
