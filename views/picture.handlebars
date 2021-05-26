@@ -51,17 +51,24 @@ picture
       
     </main>
 
-
+<div class="container-fluid text-center">
 {{!-- {{/each}} --}}
+<div id="history-button-group" class="btn-group-vertical m-2 col-6" role="group">
+            {{#each  picture.phrases as |phrase|}}
+        {{>phrase-button}}
+  {{/each}}
+  </div>
+</div>
 
-    </div>
+
+    {{!-- </div>
         <div
           id="history-button-group"
           class="btn-group-vertical col-12 mt-4 mb-2"
           role="group"
         >
           <!-- HISTORY BUTTONS INJECTED HERE -->
-        </div>
+        </div> --}}
 
 <script src="/js/script.js"></script>
 <script src="/js/login.js"></script>
