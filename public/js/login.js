@@ -34,7 +34,7 @@ const signupForm = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert("Sign up failed.");
+      alert(response.statusText);
     }
   }
 };
