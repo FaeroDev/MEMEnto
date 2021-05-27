@@ -15,10 +15,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-// router.post("/picture/:id", async (req, res) => {
-//   try {
-
-//   }
-// }
-
 module.exports = router;
