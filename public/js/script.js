@@ -1,20 +1,21 @@
 let inputContainer = document.getElementById("phraseInputContainer");
 let picId = parseInt(inputContainer.dataset.picid, 10);
+const viewBtn = $('#view-button');
+const submitBtn = $('#submit-button')
+const upperTextEl = document.getElementById("upperText");
+const lowerTextEl = document.getElementById("lowerText");
+const upperTextInput = document.getElementById("upperTextInput");
+const lowerTextInput = document.getElementById("lowerTextInput");
+
 
 const formSubmitHandler = async (event) => {
   event.preventDefault();
-
-  const upperTextEl = document.getElementById("upperText");
-  const lowerTextEl = document.getElementById("lowerText");
-
-  const upperTextInput = document.getElementById("upperTextInput");
-  const lowerTextInput = document.getElementById("lowerTextInput");
-
   let upperText = upperTextInput.value.trim();
   let lowerText = lowerTextInput.value.trim();
   let pictureId = picId;
   upperTextEl.innerHTML = upperText;
   lowerTextEl.innerHTML = lowerText;
+  alert('MEME SAVED TO DATABASE')
 
   if (upperText && lowerText) {
     const userInput = await fetch("/api/picture/", {
@@ -29,7 +30,6 @@ const formSubmitHandler = async (event) => {
       return "Meme was not saved";
     }
   }
-
   console.log(upperTextEl);
   console.log(lowerText);
 };
@@ -37,6 +37,15 @@ const formSubmitHandler = async (event) => {
 document
   .getElementById("meme-form")
   .addEventListener("submit", formSubmitHandler);
+
+  // VIEW BUTTON
+
+  $(viewBtn).on("click", function fillField() {
+    console.log("button pressed" + upperText);
+    upperTextEl.innerHTML = upperTextInput.value
+    lowerTextEl.innerHTML = lowerTextInput.value
+  })
+  
 
 //Save button
 

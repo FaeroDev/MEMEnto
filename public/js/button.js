@@ -1,7 +1,7 @@
 const phraseBtn = $(".phrase-button");
-let upperTextInput = document.getElementById("upperTextInput");
-let lowerTextInput = document.getElementById("lowerTextInput");
-const subBtn = $("#submit-button");
+// let upperTextInput = document.getElementById("upperTextInput");
+// let lowerTextInput = document.getElementById("lowerTextInput");
+// const viewBtn = $("#view-button");
 
 $(phraseBtn).on("click", function fillField() {
   console.log("fillField fired" + this.dataset.uppertext);
@@ -9,5 +9,5 @@ $(phraseBtn).on("click", function fillField() {
   upperTextInput.value = this.dataset.uppertext;
   lowerTextInput.value = this.dataset.lowertext;
 
-  subBtn.click();
+  viewBtn.click();
 });
