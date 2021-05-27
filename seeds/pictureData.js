@@ -35,6 +35,11 @@ const pictureData = [
         id: 7,
         url:"https://imgflip.com/s/meme/Unsettled-Tom.jpg",
         description:"Unsettled Tom"
+    },
+    {
+        id: 8,
+        url:"/images/Always-Has-Been.png",
+        description : "test local image"
     }
 ];
 
