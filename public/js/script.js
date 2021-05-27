@@ -53,7 +53,8 @@ function download(url) {
 }
 
 function saveCapture(event) {
-  html2canvas(event, {logging: true, letterRendering: 1,  allowTaint: false, useCORS: true 
+  html2canvas(event, {
+    // logging: true, letterRendering: 1,  allowTaint: false, useCORS: true 
     // allowTaint: true,
   }).then(function (canvas) {
     download(canvas.toDataURL("image/png"));
