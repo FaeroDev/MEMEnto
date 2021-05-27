@@ -54,6 +54,7 @@ function download(url) {
 
 function saveCapture(event) {
   html2canvas(event, {
+    // logging: true, letterRendering: 1,  allowTaint: false, useCORS: true 
     // allowTaint: true,
   }).then(function (canvas) {
     download(canvas.toDataURL("image/png"));
@@ -70,4 +71,4 @@ function showDocument(url) {
   win.document.write(`<iframe src ='${url}'></iframe>`);
 }
 
-console.log(base64url);
+// console.log(base64url);
