@@ -46,6 +46,12 @@
             <li class="nav-item">
               <a class="nav-link" href="/" id="logout-btn">Logout</a>
             </li>
+                      {{#if loggedIn}}
+            <p><strong>LOGGEDIN</strong></p>
+            {{else}}
+            <p><strong>LOGGEDOUT</strong></p>
+            {{/if}}
+
           </ul>
           <!-- <form class="d-flex">
             <input
@@ -85,5 +91,10 @@
     <!-- {{/if}} -->
 
     <!---->
+       {{#if loggedIn}}
+
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
   </body>
 </html>
