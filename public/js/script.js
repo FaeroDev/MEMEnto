@@ -1,12 +1,11 @@
 let inputContainer = document.getElementById("phraseInputContainer");
 let picId = parseInt(inputContainer.dataset.picid, 10);
-const viewBtn = $('#view-button');
-const submitBtn = $('#submit-button')
+const viewBtn = $("#view-button");
+const submitBtn = $("#submit-button");
 const upperTextEl = document.getElementById("upperText");
 const lowerTextEl = document.getElementById("lowerText");
 const upperTextInput = document.getElementById("upperTextInput");
 const lowerTextInput = document.getElementById("lowerTextInput");
-
 
 const formSubmitHandler = async (event) => {
   event.preventDefault();
@@ -15,7 +14,7 @@ const formSubmitHandler = async (event) => {
   let pictureId = picId;
   upperTextEl.innerHTML = upperText;
   lowerTextEl.innerHTML = lowerText;
-  alert('MEME SAVED TO DATABASE')
+  alert("MEME SAVED TO DATABASE");
 
   if (upperText && lowerText) {
     const userInput = await fetch("/api/picture/", {
@@ -38,14 +37,13 @@ document
   .getElementById("meme-form")
   .addEventListener("submit", formSubmitHandler);
 
-  // VIEW BUTTON
+// VIEW BUTTON
 
-  $(viewBtn).on("click", function fillField() {
-    console.log("button pressed" + upperText);
-    upperTextEl.innerHTML = upperTextInput.value
-    lowerTextEl.innerHTML = lowerTextInput.value
-  })
-  
+$(viewBtn).on("click", function fillField() {
+  console.log("button pressed" + upperText);
+  upperTextEl.innerHTML = upperTextInput.value;
+  lowerTextEl.innerHTML = lowerTextInput.value;
+});
 
 //Save button
 
@@ -58,12 +56,11 @@ function download(url) {
   a[0].click();
 
   a.remove();
-  console.log("test");
 }
 
 function saveCapture(event) {
   html2canvas(event, {
-    // logging: true, letterRendering: 1,  allowTaint: false, useCORS: true 
+    // logging: true, letterRendering: 1,  allowTaint: false, useCORS: true
     // allowTaint: true,
   }).then(function (canvas) {
     download(canvas.toDataURL("image/png"));
@@ -80,4 +77,21 @@ function showDocument(url) {
   win.document.write(`<iframe src ='${url}'></iframe>`);
 }
 
-// console.log(base64url);
+const memeText = document.querySelectorAll(".text-uppercase");
+const colorButton = document.querySelector("#color-button");
+
+function switchTextColor() {
+  memeText[0].classList.toggle("dark");
+  memeText[1].classList.toggle("dark");
+
+  if (colorButton.classList == "btn-light") {
+    colorButton.classList.toggle("btn-dark");
+    colorButton.textContent = "Black";
+  } else {
+    colorButton.setAttribute("class", "btn-light");
+    colorButton.textContent = "White";
+  }
+  console.log("button was pressed");
+}
+
+$("#color-button").click(switchTextColor);
