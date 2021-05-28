@@ -11,6 +11,4 @@ const logout = async () => {
   }
 };
 
-document
-  .querySelector("link to where logout button is")
-  .addEventListener("click", logout);
+document.getElementById("logout-btn").addEventListener("click", logout);
