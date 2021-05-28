@@ -1,10 +1,11 @@
 const loginForm = async (event) => {
   event.preventDefault();
-  const email = document.getElementById("login-email").value;
-  const password = document.getElementById("login-password").value;
+  const email = document.getElementById("login-email").value.trim();
+  const password = document.getElementById("login-password").value.trim();
 
   if (email && password) {
-    const response = await fetch("/api/users/login", {
+    const response = await ("/api/users/login",
+    {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
@@ -13,7 +14,7 @@ const loginForm = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      return "Failed to log in";
+      alert("Epic Fail");
     }
   }
 };
@@ -21,9 +22,9 @@ const loginForm = async (event) => {
 const signupForm = async (event) => {
   event.preventDefault();
 
-  const username = document.getElementById("signup-username").value;
-  const email = document.getElementById("signup-email").value;
-  const password = document.getElementById("signup-password").value;
+  const username = document.getElementById("signup-username").value.trim();
+  const email = document.getElementById("signup-email").value.trim();
+  const password = document.getElementById("signup-password").value.trim();
   if (username && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",

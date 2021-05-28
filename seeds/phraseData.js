@@ -30,9 +30,16 @@ const phraseData = [
         picture_id : 7
     },
     {
-        upper_text :"UPPER TEST",
-        lower_text :"LOWER TEST",
-        picture_id : 1
+        upper_text :"Pepe Silvia Charlie Explains to Seal",
+        picture_id : 8
+    },
+    {
+        upper_text: "Train Hitting School Bus",
+        picture_id : 9
+    },
+    {
+        upper_text: "Drake Hotline Bling",
+        picture_id : 10
     }
 ];
 

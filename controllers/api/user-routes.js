@@ -10,12 +10,6 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
-
-    //   res.status(200).json(dbUserData);
-    // });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -47,13 +41,13 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.loggedIn = true;
 
-    //   res
-    //     .status(200)
-    //     .json({ user: dbUserData, message: "You are now logged in!" });
-    // });
+      res
+        .status(200)
+        .json({ user: dbUserData, message: "You are now logged in!" });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
