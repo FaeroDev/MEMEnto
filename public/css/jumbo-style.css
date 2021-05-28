@@ -2,29 +2,30 @@
   border-top: 2px solid red
 } */
 
-.jumbotron { /*MIMICS DEPRECATED JUMBOTRON FROM PREVIOUS BS VERSIONS TO BS-5 AND UP*/
-    padding: 4rem 2rem;
-    /* margin-bottom: 2rem; */
-    border-radius: 0;
-    text-align:center;
-    background-color: transparent;
-    color: black;
-    /* border-bottom: 10px solid black; */
-  }
+.jumbotron {
+  /*MIMICS DEPRECATED JUMBOTRON FROM PREVIOUS BS VERSIONS TO BS-5 AND UP*/
+  padding: 4rem 2rem;
+  /* margin-bottom: 2rem; */
+  border-radius: 0;
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  /* border-bottom: 10px solid black; */
+}
 
-  .card-body {
-    font-size: 1.4rem;
-    text-align: center;
-    font-weight: bold;
-  }
+.card-body {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: bold;
+}
 
-  .text-box-container{
-    text-align: center;
-  }
+.text-box-container {
+  text-align: center;
+}
 
-  .transparent{
-    opacity: 20%;
-  }
+.transparent {
+  opacity: 20%;
+}
 
 .memeSubmission {
   width: 100%;
@@ -32,33 +33,42 @@
   color: var(--light);
 }
 
-.mh75{
+.mh75 {
   min-height: 75%;
+  height:200px;
 }
 
-main{
-  background-color: rgb(87, 87, 128)
+main {
+  background-color: rgb(87, 87, 128);
 }
 
-.bg-med-gray{
-  background-color: #c3c3c4
+.bg-med-gray {
+  background-color: #c3c3c4;
 }
 
-.my-w{
+.my-w {
   width: 100%;
   max-width: 1200px !important;
   /* height: 100vh */
 }
 
 .uppercase {
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 992px) {
   .view-height {
     height: 100vh;
   }
-  .login-row{
-    width:100vw;
+  .login-row {
+    width: 100vw;
   }
+}
+
+.text-uppercase {
+  color: white;
+}
+
+.dark {
+  color: black;
 }

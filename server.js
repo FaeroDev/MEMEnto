@@ -14,10 +14,15 @@ const hbs = exphbs.create({});
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
+const sess = {
+  secret: 'Super secret secret',
+  resave: false,
+  saveUninitialized: false,
+};
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(session(sess));
 
 app.use(routes);
 

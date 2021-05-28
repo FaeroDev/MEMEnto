@@ -4,7 +4,7 @@ const { User } = require("../../models");
 // CREATE new user
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
+    console.log(req.body); //Delete After
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
@@ -18,14 +18,14 @@ router.post("/", async (req, res) => {
 
 // Login
 router.post("/login", async (req, res) => {
+  console.log("i need the fetch");
   try {
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
-
-    if (!dbUserData) {
+        if (!dbUserData) {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
@@ -39,14 +39,13 @@ router.post("/login", async (req, res) => {
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
       return;
-    }
+    };
 
+    
+    
     req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res
-        .status(200)
-        .json({ user: dbUserData, message: "You are now logged in!" });
+    req.session.loggedIn = true;
+    res.status(200).json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
