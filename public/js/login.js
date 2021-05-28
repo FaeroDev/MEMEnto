@@ -4,7 +4,8 @@ const loginForm = async (event) => {
   const password = document.getElementById("login-password").value.trim();
 
   if (email && password) {
-    const response = await fetch("/api/users/login", {
+    const response = await ("/api/users/login",
+    {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
@@ -13,7 +14,7 @@ const loginForm = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert("Failed to log in");
+      alert("Epic Fail");
     }
   }
 };
