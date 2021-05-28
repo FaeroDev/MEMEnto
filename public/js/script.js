@@ -77,21 +77,74 @@ function showDocument(url) {
   win.document.write(`<iframe src ='${url}'></iframe>`);
 }
 
+// Changing the Text Size and Color
 const memeText = document.querySelectorAll(".text-uppercase");
 const colorButton = document.querySelector("#color-button");
+let textColor;
+let textSize;
 
-function switchTextColor() {
-  memeText[0].classList.toggle("dark");
-  memeText[1].classList.toggle("dark");
-
-  if (colorButton.classList == "btn-light") {
-    colorButton.classList.toggle("btn-dark");
-    colorButton.textContent = "Black";
-  } else {
-    colorButton.setAttribute("class", "btn-light");
-    colorButton.textContent = "White";
-  }
-  console.log("button was pressed");
+//Changing the Text Color
+function switchTextBlack() {
+  memeText[0].setAttribute("style", `font-size: ${textSize};color: black`);
+  memeText[1].setAttribute("style", `font-size: ${textSize};color: black`);
+  textColor = "black";
 }
 
-$("#color-button").click(switchTextColor);
+$("#black").click(switchTextBlack);
+
+function switchTextWhite() {
+  memeText[0].setAttribute("style", `font-size: ${textSize};color: white`);
+  memeText[1].setAttribute("style", `font-size: ${textSize};color: white`);
+  textColor = "white";
+}
+
+$("#white").click(switchTextWhite);
+
+function switchTextRed() {
+  memeText[0].setAttribute("style", `font-size: ${textSize};color: red`);
+  memeText[1].setAttribute("style", `font-size: ${textSize};color: red`);
+  textColor = "red";
+}
+
+$("#red").click(switchTextRed);
+
+function switchTextBlue() {
+  memeText[0].setAttribute("style", `font-size: ${textSize};color: blue`);
+  memeText[1].setAttribute("style", `font-size: ${textSize};color: blue`);
+  textColor = "blue";
+}
+
+$("#blue").click(switchTextBlue);
+
+function switchTextGreen() {
+  memeText[0].setAttribute("style", `font-size: ${textSize};color: green`);
+  memeText[1].setAttribute("style", `font-size: ${textSize};color: green`);
+  textColor = "green";
+}
+
+$("#green").click(switchTextGreen);
+
+function smallText() {
+  memeText[0].setAttribute("style", `font-size: 12pt; color:${textColor}`);
+  memeText[1].setAttribute("style", `font-size: 12pt; color:${textColor}`);
+  textSize = "12pt";
+}
+
+//Changing the Text Size
+$("#small").click(smallText);
+
+function medText() {
+  memeText[0].setAttribute("style", `font-size: 24pt; color:${textColor}`);
+  memeText[1].setAttribute("style", `font-size: 24pt; color:${textColor}`);
+  textSize = "24pt";
+}
+
+$("#medium").click(medText);
+
+function largeText() {
+  memeText[0].setAttribute("style", `font-size: 36pt; color:${textColor}`);
+  memeText[1].setAttribute("style", `font-size: 36pt; color:${textColor}`);
+  textSize = "36pt";
+}
+
+$("#large").click(largeText);
