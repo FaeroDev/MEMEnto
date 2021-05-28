@@ -23,7 +23,7 @@ const pictureData = [
     },
     {
         id: 5,
-        url:"/images/One-Does-Not-Simply.png",
+        url:"/images/One-Does-Not-Simply.jpeg",
         description:"One does not simply"
     },
     {
@@ -36,25 +36,20 @@ const pictureData = [
         url:"/images/Unsettled-Tom.jpeg",
         description:"Unsettled Tom"
     },
-    {
+        {
         id: 8,
-        url:"/images/Always-Has-Been.png",
-        description : "test local image"
-    }
+        url:"/images/Pepe Silvia.png",
+        description :"Pepe Silvia Charlie Explains to Seal"
+    },
     {
-        id: 8;
-        url:"/images/Pepe Silvia.png"
-        description:"Pepe Silvia Charlie Explains to Seal"
-    }
+        id: 9,
+        url:"/images/trainhittingbus.png",
+        description: "Train Hitting School Bus"
+    },
     {
-        id: 9;
-        url:"/images/trainhittingbus.png"
-        description:"Train Hitting School Bus"
-    }
-    {
-        id: 10;
-        url:"/images/Drakeposting.png"
-        description:"Drake Hotline Bling"
+        id: 10,
+        url:"/images/Drakeposting.jpg",
+        description: "Drake Hotline Bling"
     }
 ];
 
