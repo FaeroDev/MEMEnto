@@ -10,12 +10,6 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-
-    req.session.save(() => {
-      req.session.loggedIn();
-
-      res.status(200).json(dbUserData);
-    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
