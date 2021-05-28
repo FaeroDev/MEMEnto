@@ -35,6 +35,7 @@
 
 .mh75 {
   min-height: 75%;
+  height:200px;
 }
 
 main {
@@ -71,3 +72,4 @@ main {
 .dark {
   color: black;
 }
+
