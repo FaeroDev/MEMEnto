@@ -3,12 +3,7 @@ const bcrypt = require("bcryptjs");
 const sequelize = require("../config/connection");
 class User extends Model {
   checkPassword(loginPw) {
-    // return bcrypt.compareSync(loginPw, this.password);
-    if (loginPw === this.password) {
-      return true;
-    } else {
-      return false;
-    }
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
@@ -32,10 +27,10 @@ User.init(
   },
   {
     hooks: {
-      // beforeCreate: async (newUserData) => {
-      //   newUserData.password = await bcrypt.hash(newUserData.password, 10);
-      //   return newUserData;
-      // },
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
     },
     sequelize,
     timestamps: false,
