@@ -35,7 +35,7 @@
 
 .mh75 {
   min-height: 75%;
-  height:200px;
+  height: 200px;
 }
 
 main {
@@ -73,3 +73,25 @@ main {
   color: black;
 }
 
+#lowerTextHeader,
+#upperTextHeader {
+  cursor: move;
+  z-index: 10;
+}
+
+#lowerText,
+#upperText {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+}
+
+#upperText {
+  top: 100px;
+  left: 150px;
+}
+
+#lowerText {
+  top: 200px;
+  left: 150px;
+}
