@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     );
     res.render("homepage", {
       pictures,
-      // loggedIn: req.session.loggedIn,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -39,7 +39,9 @@ router.get("/picture/:id", async (req, res) => {
     });
 
     const picture = dbPictureData.get({ plain: true });
-    res.render("picture", { picture });
+    res.render("picture", { picture,
+       loggedIn: req.session.loggedIn 
+      });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

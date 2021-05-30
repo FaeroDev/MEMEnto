@@ -4,15 +4,19 @@ const loginForm = async (event) => {
   const password = document.getElementById("login-password").value.trim();
 
   if (email && password) {
-    const response = await fetch("/api/users/login",
-    {
+    const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      setTimeout(function () {   //WE NEED THIS FOR A MILLISECOND DELAY
+        document.location = "/";
+      }, 100);
+
+      // alert('LOGGED IN')
+      // document.location = ("/");
     } else {
       alert("Epic Fail");
     }
