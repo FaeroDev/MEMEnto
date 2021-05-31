@@ -11,9 +11,9 @@ const loginForm = async (event) => {
     });
 
     if (response.ok) {
-      setTimeout(function () {   //WE NEED THIS FOR A MILLISECOND DELAY
+      setTimeout(function () {   //WE NEED THIS FOR A 1 second DELAY
         document.location = "/";
-      }, 100);
+      }, 1000);
 
       // alert('LOGGED IN')
       // document.location = ("/");
