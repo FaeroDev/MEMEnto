@@ -7,6 +7,7 @@ const lowerTextEl = document.getElementById("lowerText");
 const upperTextInput = document.getElementById("upperTextInput");
 const lowerTextInput = document.getElementById("lowerTextInput");
 
+// Submit button
 const formSubmitHandler = async (event) => {
   event.preventDefault();
   let upperText = upperTextInput.value.trim();
@@ -46,7 +47,7 @@ $(viewBtn).on("click", function fillField() {
   lowerTextEl.innerHTML = lowerTextInput.value;
 });
 
-//Save button
+//Download (save) button
 
 function download(url) {
   a = $("<a style='display:none' id='js-downloder'>")

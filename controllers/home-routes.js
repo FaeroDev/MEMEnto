@@ -59,47 +59,9 @@ router.get("/phrase/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-//res.render ---> Make sure that the handlebar page looks the same replace 'meme'
-
-//     const dbPhraseData = await Phrase.findAll({
-//       where: {
-//         picture_id: req.params.id,
-//       },
-//       include: [
-//         {
-//           model: phrase,
-//           attributes: ["id", "upper_text", "lower_text", "phrase_picture_id"],
-//         },
-//       ],
-//     });
-
-//     const phrase = dbPhraseData.get({ plain: true });
-//     res.render("picture", { picture, phrase, loggedIn: req.session.loggedIn });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// // GET one painting
-// router.get("/template/:id", async (req, res) => {
-//   try {
-//     const dbTemplateData = await Template.findByPk(req.params.id);
-
-//     const meme = dbTemplateData.get({ plain: true });
-//     res.render("template", { meme, loggedIn: req.session.loggedIn });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 // Login route
 router.get("/login", (req, res) => {
-  //   if (req.session.loggedIn) {
-  //     res.redirect("/");
-  //     return;
-  //   }
   res.render("login");
 });
 
