@@ -50,7 +50,12 @@ const pictureData = [
         id: 10,
         url:"/images/Drakeposting.jpg",
         description: "Drake Hotline Bling"
-    }
+    },
+    {
+        id: 11,
+        url:"/images/Elmo.jpg",
+        description: "Elmo"
+    },
 ];
 
 const seedPictures = () => Picture.bulkCreate(pictureData);
