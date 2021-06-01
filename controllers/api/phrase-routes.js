@@ -9,6 +9,7 @@ router.post("/", async (req, res) => {
       upper_text: req.body.upperText,
       lower_text: req.body.lowerText,
     });
+    res.status(200);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

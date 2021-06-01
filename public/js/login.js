@@ -37,7 +37,8 @@ const signupForm = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      alert("Successfully created user, please log in")
+      document.location.replace("/login");
     } else {
       alert(response.statusText);
     }

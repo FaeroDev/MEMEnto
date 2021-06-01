@@ -16,7 +16,7 @@ const formSubmitHandler = async (event) => {
   lowerTextEl.innerHTML = lowerText;
   alert("MEME SAVED TO DATABASE");
 
-  if (upperText && lowerText) {
+  if (upperText || lowerText) {
     const userInput = await fetch("/api/picture/", {
       method: "POST",
       body: JSON.stringify({ upperText, lowerText, pictureId }),
@@ -24,6 +24,7 @@ const formSubmitHandler = async (event) => {
     });
 
     if (response.ok) {
+      
       document.location.replace("/");
     } else {
       return "Meme was not saved";
