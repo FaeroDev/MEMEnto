@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pharaohnof/MEMEnto.git"
+    "url": "git+https://github.com/FaeroDev/MEMEnto.git"
   },
   "author": "Cabrera, Kerekes, McDermott, Pawlak and Pitts",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pharaohnof/MEMEnto/issues"
+    "url": "https://github.com/FaeroDev/MEMEnto/issues"
   },
-  "homepage": "https://github.com/pharaohnof/MEMEnto#readme",
+  "homepage": "https://github.com/FaeroDev/MEMEnto#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.1",
