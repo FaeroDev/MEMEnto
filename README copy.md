@@ -16,6 +16,6 @@
     * Annakate Pitts | Slack name: Annakate Pitts | Github : [pittsannakate](https://github.com/pittsannakate)
     * Mario Cabrera | Slack name: Mario Cabrera | Github : [MarioCab](https://github.com/MarioCab)
     * Tom Kerekes | Slack name: Tom Kerekes | Github : [tkerekes10](https://github.com/tkerekes10)
-    * Matthew Scott Pawlak | Slack name: Matthew Pawlak | Github : [pharaohnof](https://github.com/pharaohnof)
+    * Matthew Scott Pawlak | Slack name: Matthew Pawlak | Github : [FaeroDev](https://github.com/FaeroDev)
     * Project Github Page: [GITHUB PAGE HERE]
-    * Project Github Repo: https://github.com/pharaohnof/MEMEnto
+    * Project Github Repo: https://github.com/FaeroDev/MEMEnto
