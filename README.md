@@ -30,7 +30,7 @@
 ***
 
   ### Clone the repository: 
-    git clone git@github.com:pharaohnof/MEMEnto.git  
+    git clone git@github.com:FaeroDev/MEMEnto.git  
       
   ### Dependencies:  
   The following dependencies are required for use:  
@@ -81,6 +81,6 @@
   * Annakate Pitts        Github : [pittsannakate](https://github.com/pittsannakate)
   * Mario Cabrera         Github : [MarioCab](https://github.com/MarioCab)
   * Tom Kerekes           Github : [tkerekes10](https://github.com/tkerekes10)
-  * Matthew Scott Pawlak  Github : [pharaohnof](https://github.com/pharaohnof)
+  * Matthew Scott Pawlak  Github : [FaeroDev](https://github.com/FaeroDev)
 
   Project Live Page: https://secure-atoll-56400.herokuapp.com/
