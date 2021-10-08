@@ -22,7 +22,7 @@
 
 ***
     
-  To use MEMEnto, just navigate to https://secure-atoll-56400.herokuapp.com/ on your favorite browser, sign up, and enjoy.  
+  To use MEMEnto, just navigate to https://mementogenerator.herokuapp.com/ on your favorite browser, sign up, and enjoy.  
     
 
   ##  Installation
@@ -83,4 +83,4 @@
   * Tom Kerekes           Github : [tkerekes10](https://github.com/tkerekes10)
   * Matthew Scott Pawlak  Github : [FaeroDev](https://github.com/FaeroDev)
 
-  Project Live Page: https://secure-atoll-56400.herokuapp.com/
+  Project Live Page: https://mementogenerator.herokuapp.com/
