@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "15.x",
-    "npm": "7.x"
+    "node": "16.x",
+    "npm": "8.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/FaeroDev/MEMEnto#readme",
   "dependencies": {
-    "minimist": "^1.2.6"
+    "moment": "^2.29.2",
+    "minimist": "^1.2.6",
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^9.0.2",
