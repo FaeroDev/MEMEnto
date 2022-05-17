@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/FaeroDev/MEMEnto#readme",
   "dependencies": {
+    "minimist": "^1.2.6"
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^9.0.2",
